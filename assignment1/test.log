@@ -1,5 +1,5 @@
-Script started on 2026-09-21 11:26:41-06:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="119" LINES="7"]
-gantuang@ucomm-2086-w20:~/CMPUT455/assignment1>git pullpython3 phase2_query.py uriel.json 27069git pull[Kpython3 phase2_query.py uriel.json 27069git pull[K[Kpython3 [K a1test.py a1.py assignment1-public-tests.txt 
+Script started on 2026-09-21 11:29:00-06:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="119" LINES="7"]
+gantuang@ucomm-2086-w20:~/CMPUT455/assignment1>python3 a1.py a[K[K[K[K[Ktest.py a1.py assignment1-public-tests.txt 
 [34mSummary report:
 [0m66 tests performed
 [32m66 / 66 output statuses matched.
@@ -10,7 +10,7 @@ gantuang@ucomm-2086-w20:~/CMPUT455/assignment1>git pullpython3 phase2_qu
 Public test mark: 1.00 / 1 mark (20.0% of the 5 marks for this assignment).
 
 Finished after 0.04 seconds.
-gantuang@ucomm-2086-w20:~/CMPUT455/assignment1>git [K[K[K[Kexit
+gantuang@ucomm-2086-w20:~/CMPUT455/assignment1>exit
 exit
 
-Script done on 2026-09-21 11:26:58-06:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-09-21 11:29:25-06:00 [COMMAND_EXIT_CODE="0"]
