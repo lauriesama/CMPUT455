@@ -1,0 +1,271 @@
+#CMPUT 455 - Assignment 1 public tests
+#======================================================================
+# Output format for each command:
+#   command
+#   output lines (if any)
+#   = 1        on success
+#   = -1       on error
+# Lines starting with ? are marked tests. Lines starting with # are comments.
+#======================================================================
+
+# 1 heap 1 token
+?heapgo 0.5 [[('w', 2)]]
+= 1
+
+# show prints the komi, then a space, then the game state
+?show
+k 0.5 [[('w', 2)]]
+= 1
+
+?toplay b
+= 1
+
+?score
+b 0 w 0.5
+= 1
+
+?legal 0
+yes
+= 1
+
+?legal 1
+no
+= 1
+
+# game not over
+?winner
+= -1
+
+?play 0
+= 1
+
+?show
+k 0.5 [[]]
+= 1
+
+?score
+b 2 w 0.5
+= 1
+
+?winner
+b
+= 1
+
+# no moves left
+?genmove
+= -1
+
+#======================================================================
+# 1 heap 2 tokens
+?heapgo 0.5 [[('w', 2), ('b', 2)]]
+= 1
+
+?show
+k 0.5 [[('w', 2), ('b', 2)]]
+= 1
+
+?legal 0
+yes
+= 1
+
+?legal 1
+no
+= 1
+
+?legal 42
+no
+= 1
+
+?legal random text
+= -1
+
+# play b --> both tokens taken
+?play 0
+= 1
+
+?show
+k 0.5 [[]]
+= 1
+
+?score
+b 4 w 0.5
+= 1
+
+?winner
+b
+= 1
+
+#======================================================================
+# heapgo needs both a komi and a game
+?heapgo [[('w', 2)]]
+= -1
+
+?heapgo 0.5
+= -1
+
+?heapgo this is bad input
+= -1
+
+# negative komi, white to play
+?heapgo -2.5 [[('b', 3), ('w', 1)]]
+= 1
+
+?toplay w
+= 1
+
+?show
+k -2.5 [[('b', 3), ('w', 1)]]
+= 1
+
+?score
+b 0 w -2.5
+= 1
+
+# white takes ('w', 1), then one opponent token ('b', 3)
+?play 0
+= 1
+
+?score
+b 0 w 1.5
+= 1
+
+?winner
+w
+= 1
+
+#======================================================================
+# Example game G from the assignment page, Black to play
+?heapgo 0.5 [[('w', 9), ('b', 12), ('w', 5)], [('b', 6), ('b', 9)]]
+= 1
+
+?show
+k 0.5 [[('w', 9), ('b', 12), ('w', 5)], [('b', 6), ('b', 9)]]
+= 1
+
+?legal 0
+yes
+= 1
+
+?legal 1
+yes
+= 1
+
+?legal 2
+no
+= 1
+
+# Black takes the top token ('w', 5) from heap 0
+?play 0
+= 1
+
+?show
+k 0.5 [[('w', 9), ('b', 12)], [('b', 6), ('b', 9)]]
+= 1
+
+?score
+b 5 w 0.5
+= 1
+
+# after a move, it is the other player's turn: White takes ('b', 12)
+?play 0
+= 1
+
+?show
+k 0.5 [[('w', 9)], [('b', 6), ('b', 9)]]
+= 1
+
+?score
+b 5 w 12.5
+= 1
+
+# Black takes ('b', 9), ('b', 6): heap empty, so no opponent token
+?play 1
+= 1
+
+?show
+k 0.5 [[('w', 9)], []]
+= 1
+
+?score
+b 20 w 12.5
+= 1
+
+?winner
+= -1
+
+# only one move left, so genmove must play heap 0
+?genmove
+0
+= 1
+
+?show
+k 0.5 [[], []]
+= 1
+
+?score
+b 20 w 21.5
+= 1
+
+?winner
+w
+= 1
+
+#======================================================================
+# Example game G from the assignment page, White to play
+?heapgo 0.5 [[('w', 9), ('b', 12), ('w', 5)], [('b', 6), ('b', 9)]]
+= 1
+
+?toplay w
+= 1
+
+# White takes ('w', 5), then ('b', 12): score 17
+?play 0
+= 1
+
+?show
+k 0.5 [[('w', 9)], [('b', 6), ('b', 9)]]
+= 1
+
+?score
+b 0 w 17.5
+= 1
+
+# Black takes ('b', 9), ('b', 6): heap empty
+?play 1
+= 1
+
+?show
+k 0.5 [[('w', 9)], []]
+= 1
+
+?score
+b 15 w 17.5
+= 1
+
+# heap 1 is empty, so playing it is an error
+?play 1
+= -1
+
+# White takes ('w', 9)
+?play 0
+= 1
+
+?score
+b 15 w 26.5
+= 1
+
+?winner
+w
+= 1
+
+#======================================================================
+# genmove picks a random non-empty heap and prints its number
+?heapgo 0.5 [[('b', 1)], [('w', 2)], [('b', 3)]]
+= 1
+
+?genmove
+@[0-2]
+= 1
+
+?winner
+= -1
