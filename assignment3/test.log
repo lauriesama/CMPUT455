@@ -1,0 +1,16 @@
+Script started on 2026-11-01 15:38:29-06:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="196" LINES="25"]
+gantuang@ucomm-2086-w20:~/CMPUT455/assignment3>exitpython3 a3test.py a3.py assignment3-public-tests.txt [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Ptar -xvzf assignment2.tgz -C test[20Pmkdir -p[C[C[C[C[C[5Pgit pushllconfig pull.rebase falsepull[Kshllshcommit -m "a2"[9Padd .tar -xvzf assignment2.tgz[11Pcd assignment2tar -xvzf assignment2.tgz[16Pgit add .commit -m "a2"push[Kllshllconfig pull.rebase falsepull[Kshmkdir -p test[20@tar -xvzf assignment2.tgz -C[C[C[C[C[Cpython3 a3test.py a3.py assignment3-public-tests.txt [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[Kexitpython3 a3test.py a3.py assignment3-public-tests.txt 
+[34mSummary report:
+[0m161 tests performed
+[32m161 / 161 output statuses matched.
+[0m[32m161 / 161 command outputs matched.
+[0m[32m0 / 161 tests timed out.
+[0m[34mMarks report
+[0m59 / 59 marked tests passed.
+Public test mark: 1.00 / 1 mark (20.0% of the 5 marks for this assignment).
+
+Finished after 0.23 seconds.
+gantuang@ucomm-2086-w20:~/CMPUT455/assignment3>exit
+exit
+
+Script done on 2026-11-01 15:38:45-06:00 [COMMAND_EXIT_CODE="0"]
